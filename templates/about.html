@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  <style>
+    * {
+      margin: 3px;
+      box-sizing: border-box;
+    }
+
+    #left {
+      width: 100%;
+    }
+
+    #left button {
+      width: 40%;
+    }
+
+    .right {
+      width: 100%;
+      margin-left: 0;
+      padding: 10px;
+    }
+
+    .right img {
+      width: 50%;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    #top {
+      width: 95%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px auto;
+      justify-content: space-around;
+    }
+
+    #l {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    #r img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 90px 0px 90px 0px;
+    }
+
+    footer .last {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #y img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px;
+      box-shadow: 5px 5px 5px gray;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    #y img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (min-width: 768px) {
+      #left {
+        width: 65%;
+      }
+
+      .right {
+        width: 30%;
+        margin-left: 20px;
+      }
+
+      .right img {
+        width: 30%;
+      }
+
+      #l {
+        width: 50%;
+      }
+
+      #r {
+        width: 40%;
+      }
+
+      #r img {
+        width: 130%;
+      }
+
+      section {
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="bg-info text-center p-2">Welcome to the About Page</h1>
+
+  <div id="top">
+    <div id="l" class="bg-light border p-3 m-3">
+      <h2>ABOUT US </h2>
+      <p class="m-3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua...
+      </p>
+      <a href="{% url 'more' %}" class="btn btn-primary">More About Us</a>
+
+    </div>
+    <div id="r">
+      <img src="/static/p.JPEG" class="img m-3">
+    </div>
+  </div>
+
+  <div class="bg-warning p-3" id="y">
+    <h3 class="text-center m-3">Make your long Journey Comfortable and Satisfied</h3>
+    <p class="text-center">Here’s the peace of your life and your peace is our credit for our actual journey</p>
+    <div class="d-flex flex-wrap justify-content-center">
+      <img src="/static/paris.JPEG">
+      <img src="/static/filipines.JPEG">
+      <img src="/static/kerala.JPEG">
+      <img src="/static/day.JPEG">
+    </div>
+    <h3 class="text-center m-3">Immersing Yourself in Local Traditions</h3>
+    <p class="text-center m-2 text-light">
+      Explore new destinations, uncover hidden gems...
+    </p>
+  </div>
+
+  <section>
+    <div class="bg-light p-4 text-center border" id="left">
+      <p>
+        This tourism website offers an overview of the services and destinations...
+      </p>
+      <a href="{% url 'more' %}" class="btn btn-primary">More About Us</a>
+
+    </div>
+
+    <div class="right text-center">
+      <img src="/static/logo 1.PNG" class="img mx-auto d-block">
+      <p>MEMORIZE OF YOUR DREAM DESTINATION</p>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+
+    <div class="right text-center">
+      <img src="/static/logo 2.PNG" class="img mx-auto d-block">
+      <p>MEMORIZE OF YOUR DREAM DESTINATION</p>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+
+    <div class="right text-center">
+      <img src="/static/logo 3.PNG" class="img mx-auto d-block">
+      <p>MEMORIZE OF YOUR DREAM DESTINATION</p>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+  </section>
+
+  <footer class="bg-dark p-3 text-light">
+    <div class="last">
+      <ul>
+        <li>Cultural Travel</li>
+        <li>Luxury Escapes</li>
+        <li>Family-Friendly Vacation Ideas</li>
+        <li>Budget Travel</li>
+        <li>Cruise Vacation</li>
+        <li>Solo Travel</li>
+      </ul>
+      <ul>
+        <li>Cultural Travel</li>
+        <li>Luxury Escapes</li>
+        <li>Family-Friendly Vacation Ideas</li>
+        <li>Budget Travel</li>
+        <li>Cruise Vacation</li>
+        <li>Solo Travel</li>
+      </ul>
+      <ul>
+        <li>Cultural Travel</li>
+        <li>Luxury Escapes</li>
+        <li>Family-Friendly Vacation Ideas</li>
+        <li>Budget Travel</li>
+        <li>Cruise Vacation</li>
+        <li>Solo Travel</li>
+      </ul>
+    </div>
+
+    <h3 class="display-4 text-center">Travellers</h3>
+    <div class="text-center">
+      <a href="#"><i class="fa-brands fa-google text-light"></i></a>
+      &nbsp;&nbsp;
+      <a href="#"><i class="fa-brands fa-facebook text-light"></i></a>
+      &nbsp;&nbsp;
+      <a href="#"><i class="fa-brands fa-square-twitter text-light"></i></a>
+      &nbsp;&nbsp;
+      <a href="#"><i class="fa-brands fa-linkedin text-light"></i></a>
+    </div>
+    <p class="text-center mt-3">
+      Terms of Use &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Security &nbsp; | &nbsp; Data Processing
+    </p>
+    <p class="text-center">&copy; 2024 Travellers is a registered trademark of Votenet solution with e-voting System.</p>
+  </footer>
+</body>
+</html>

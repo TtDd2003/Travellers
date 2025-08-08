@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style >
+      *{
+         font-family: sans-sarif;
+  }
+  section{width: 100%;
+   display: grid;
+   grid-template-columns: 30% 30% 30%; 
+   grid-gap: 10px; 
+   outline: 2px solid black;
+}
+div{
+   width:80%;
+    background-color:  #DBE9FA;
+    padding: 3%;
+    margin: 10px 50px;
+    text-align: center;
+}
+h1{font-size: 30px; text-align: center;}
+h3{text-align: center}
+
+
+    </style>
+    {% load static %}
+</head>
+<body>
+   <h1 class='text-center'>Some features that make us unique.. </h1>
+   <h3>Those are getting far away....</h3>
+   <section>
+      {% for n in data %}
+      <div >
+         <a href=''><i class='{{n.icon}}'></i></a>
+         <h2>{{n.title}}</h2>
+         <p>{{n.description | safe }}</p> 
+      </div>
+      {% endfor %}
+   </section>
+
+   <nav aria-label="Page navigation example">
+      <ul class="pagination">
+          {% if data.has_previous %}
+              <li class="page-item">
+                  <a class="page-link" href="?page=1" aria-label="First">
+                      <span aria-hidden="true">Previous</span>
+                  </a>
+              </li>
+              
+          {% else %}
+              <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="First">
+                      <span aria-hidden="true">&laquo;</span>
+                  </a>
+              </li>
+              <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                  </a>
+              </li>
+          {% endif %}
+  
+          {% for i in data.paginator.page_range %}
+              <li class="page-item {% if data.number == i %} active {% endif %}">
+                  <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+              </li>
+          {% endfor %}
+  
+          {% if data.has_next %}
+              <li class="page-item">
+                  <a class="page-link" href="?page={{ data.next_page_number }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                  </a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="?page={{ data.paginator.num_pages }}" aria-label="Last">
+                      <span aria-hidden="true">&raquo;</span>
+                  </a>
+              </li>
+          {% else %}
+
+              <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Last">
+                      <span aria-hidden="true">last</span>
+                  </a>
+              </li>
+          {% endif %}
+      </ul>
+  </nav>
+  
+</body>
+</html>

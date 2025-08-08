@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title></title>
+	<style >
+		section{display: flex; }
+		.conatiner{ margin: auto;}
+	</style>
+</head>
+<body>
+<p class='display-4 text-center bg-success p-2 text-light'><b>Let's Get together and talk.</b></p>
+<p class='col-8 text-center m-auto '>Please fill up the form given below to contact with us. it will be routed to person best able to provide you assistant. A TriTech representation wiull contact you shortly.</p>
+ 
+    <div class="loaction">
+  	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14716.755863418675!2d88.3963396!3d22.7583675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f899aa114efb0f%3A0xf345029031347802!2sSwami%20Vivekananda%20University!5e0!3m2!1sen!2sin!4v1730129905579!5m2!1sen!2sin" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+<section>
+<div class="conatiner ">
+  <div class="row p-2">
+	<div class="col-6  m-3">
+	  <form class="form-group col-8 m-2" method='POST' action="{% url 'saveData' %}">
+		{% csrf_token  %}
+		<input type="text" name="name"  placeholder="Name" class="form-control" required=''><br>
+		<input type="email" name="email" placeholder="Email" class="form-control" required=''   ><br>
+		<input type="tel" name="phone" placeholder="Phone" class="form-control"required='' ><br>
+		<input type="text" name="whatsapp_no" placeholder="Whatsapp number" class="form-control" ><br>
+		<textarea class="form-control" name = 'description' ></textarea>
+	     <label for="id_image">Choose an image:</label>
+    	<input type="file" name="image" accept="image/*" class="form-control">
+		<button class="btn btn-success text-light m-2 col-5">Submit</button>
+	  </form>
+  </div>
+  <div class=" m-3 col-4">
+	<h1>Contact Information --</h1>
+	<h3 class="m-3">Tri Tech</h3> 
+	<p>
+		Address: 65/B Block Prantik appartment 4th floor , Biggharnagar, Kolkata, West Bengal.
+	</p>
+	<h3 class="m-2">Mobile</h3>
+	+91 234567824 , +91 987654567
+	<h3 class="m-2">Email</h3>
+	info@tritechsolutions.gmail.com
+  </div>
+ </div>
+</div>
+
+</section>
+
+</body>
+</html>

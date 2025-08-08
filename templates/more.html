@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background:linear-gradient(45deg,lightgreen, white,skyblue,lightyellow)
+        }
+    </style>
+</head>
+<body>
+    <h2 class="bg-info text-light p-2 text-center">Reviews which made You to choose Best..</h2>
+    <p class ='text-center display-4'>You can share images and experiences with us also..</p>
+    <div class="container mt-5">
+        <h2>Image Upload</h2>
+        
+        <!-- Display form -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        <!-- Display uploaded images -->
+        <h3>Uploaded Images</h3>
+        <div class="row">
+            {% for image in img %}
+                <div class="col-md-4">
+                    <img src="{{ image.image.url }}" class="img-fluid" alt="{{ image.title }}">
+                    <p><b>{{ image.caption }}</b></p>
+                    <p>{{ image.experience }}</p>
+                </div>
+            {% empty %}
+                <p>No images uploaded yet.</p>
+            {% endfor %}
+        </div>
+
+        {% if obj %}
+            <h3>Last Uploaded Image</h3>
+            <img src="{{ obj.image.url }}" class="img-fluid" alt="{{ obj.title }}">
+            <p><b>{{ obj.caption }}</b></p>
+            <p>{{ obj.experience }}</p>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
