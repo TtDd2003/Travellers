@@ -8,90 +8,7 @@
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <title>Adventure Of your Life</title>
-  <style>
-    .slider-wrapper {
-      scroll-snap-type: x mandatory;
-      overflow-x: auto;
-      display: flex;
-      scroll-behavior: smooth;
-      width: 90%;
-      margin : 0 auto;
-      border: 7px solid black;
-      
-    }
 
-    .slider-img {
-      flex: 0 0 100%;
-      scroll-snap-align: start;
-      max-height: 550px;
-      object-fit: cover;
-    }
-
-    @media (max-width: 768px) {
-      .slider-img {
-        max-height: 300px;
-      }
-    }
-
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      padding: 0.7rem 1rem;
-      font-size: 1.5rem;
-      border-radius: 50%;
-    }
-
-    .slider-btn.left {
-      left: 90px;
-      width:9%;
-    }
-
-    .slider-btn.right {
-      right: 90px;
-       width:9%;
-    }
-    .slider-btn:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-    .slider-btn i{
-      margin:auto;
-    }
-
-    #grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .grid-item {
-      position: relative;
-      width: 300px;
-      height: 200px;
-    }
-
-    .grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .grid-item .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      text-align: center;
-      padding: 5px 0;
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -115,12 +32,12 @@
   <section class="container-fluid p-0">
     <div class="position-relative">
       <div class="slider-wrapper" id="sliderList">
-        <img src="/static/n.JPG" class="slider-img" alt="Slide 1">
-        <img src="/static/a2.JPEG" class="slider-img" alt="Slide 2">
-        <img src="/static/1.JPG" class="slider-img" alt="Slide 3">
-        <img src="/static/g.JPG" class="slider-img" alt="Slide 4">
-        <img src="/static/Hill.JPG" class="slider-img" alt="Slide 5">
-        <img src="/static/t.JPG" class="slider-img" alt="Slide 6">
+        <img src="{% static 'n.JPG' %}" class="slider-img" alt="Slide 1">
+        <img src="{% static 'a2.JPEG' %}" class="slider-img" alt="Slide 2">
+        <img src="{% static '1.JPG' %}" class="slider-img" alt="Slide 3">
+        <img src="{% static 'g.JPG' %}" class="slider-img" alt="Slide 4">
+        <img src="{% static 'Hill.JPG' %}" class="slider-img" alt="Slide 5">
+        <img src="{% static 't.JPG' %}" class="slider-img" alt="Slide 6">
       </div>
 
       <!-- Scroll Buttons -->
@@ -132,60 +49,59 @@
   <hr>
 
   <!-- Why Choose Us Section -->
-    <div class="container">
-  <h2 class="text-center">Why Choose US As Your Tour GUIDE</h2>
-  <p class="text-center">For not only fascinated travelers but also those who want to explore the world.</p>
+  <div class="container">
+    <h2 class="text-center">Why Choose US As Your Tour GUIDE</h2>
+    <p class="text-center">For not only fascinated travelers but also those who want to explore the world.</p>
 
-  <div class="row align-items-center mt-4">
-    <!-- Image Column (smaller on large screens) -->
-    <div class="col-md-5 mb-3">
-      <img src="/static/enjoy.JPEG" class="img-fluid rounded w-100">
-    </div>
+    <div class="row align-items-center mt-4">
+      <!-- Image Column -->
+      <div class="col-md-5 mb-3">
+        <img src="{% static 'enjoy.JPEG' %}" class="img-fluid rounded w-100">
+      </div>
 
-    <!-- Text Column (larger on large screens) -->
-    <div class="col-md-7 p-4 bg-warning text-light">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt, turpis nec varius commodo, lorem odio volutpat velit, in posuere ex purus in lacus.</p>
-      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur fringilla, nisi id lacinia facilisis, augue urna malesuada nisi.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Integer nec sem nec sapien convallis pharetra.</p>
+      <!-- Text Column -->
+      <div class="col-md-7 p-4 bg-warning text-light">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt, turpis nec varius commodo, lorem odio volutpat velit, in posuere ex purus in lacus.</p>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur fringilla, nisi id lacinia facilisis, augue urna malesuada nisi.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Integer nec sem nec sapien convallis pharetra.</p>
+      </div>
     </div>
   </div>
-</div>
-
 
   <h2 class="bg-dark text-light text-center py-3 mt-5">
     <ins>Discover the Magic of New Place</ins>
   </h2>
 
   <div class="container my-5">
-       <!-- Row 1 -->
+    <!-- Row 1 -->
 <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <p>The sea is not just a destination—it's a feeling. Imagine walking barefoot on soft sands as the waves gently kiss the shore. The rhythmic sound of the ocean calms the soul while vibrant sunsets ignite your spirit. Whether you’re diving into crystal-clear waters, sailing toward the horizon, or simply lounging under palm trees, the sea offers a magical escape that reconnects you with nature and fills your heart with peace and wonder.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="/static/d.JPEG" class="img-fluid rounded w-100">
-      </div>
-    </div>
+  <div class="col-md-6">
+    <p>The sea is not just a destination—it's a feeling of freedom, serenity, and endless beauty. Imagine walking barefoot on soft sands while the waves gently kiss your feet, the sun warming your face, and salty breezes dancing through your hair. It's a place where stress fades away, laughter echoes louder, and time stands still. Whether you're swimming, sunbathing, or simply watching the tide, the sea reconnects you with peace.</p>
+  </div>
+  <div class="col-md-6">
+    <img src="{% static 'd.JPEG' %}" class="img-fluid rounded w-100">
+  </div>
+</div>
 
-    <!-- Row 2 -->
-    <div class="row align-items-center mb-5 flex-md-row-reverse">
+<!-- Row 2 -->
+<div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <p>Forests invite you into a world where time slows down and life feels pure again. As you walk under towering canopies, sunlight filters through leaves, casting golden glows on winding trails. The air smells of earth and adventure. Birds sing above while wildlife hides just out of sight, creating a natural symphony. Whether you're hiking, camping, or simply exploring, every moment in the forest is a reminder of Earth’s untouched beauty and deep tranquility.</p>
+        <p>Forests invite you into a world where time slows down and every breath feels fresher. Surrounded by towering trees and rustling leaves, you find yourself immersed in nature’s untouched purity. Birds sing above, and sunlight peeks through the canopy like golden threads. Whether you're hiking through misty trails or simply listening to nature’s hush, forests offer calm, mystery, and the magic of rediscovery with every step you take deeper inside.</p>
       </div>
       <div class="col-md-6">
-        <img src="/static/i2.JPEG" class="img-fluid rounded w-100">
+        <img src="{% static 'i2.JPEG' %}" class="img-fluid rounded w-100">
       </div>
     </div>
 
     <!-- Row 3 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <p>Mountains awaken something powerful inside us. As you ascend winding trails and conquer rocky paths, you're rewarded with views that steal your breath away. Crisp mountain air fills your lungs, and every step forward feels like a personal victory. Whether it’s snow-covered peaks or sunlit valleys, mountains offer more than beauty—they challenge, inspire, and uplift. It's not just about reaching the top, but about discovering your strength and courage along the way.</p>
+        <p>Mountains awaken a sense of strength and wonder in all who dare to climb them. Their towering presence commands awe, while each trail challenges your endurance and rewards your spirit. As you ascend, the air grows cooler, the views expand, and your connection with nature deepens. Reaching the summit isn't just a physical achievement—it’s a moment of clarity, reflection, and raw inspiration you carry with you forever.</p>
       </div>
       <div class="col-md-6">
-        <img src="/static/download.JPEG" class="img-fluid rounded w-100">
+        <img src="{% static 'download.JPEG' %}" class="img-fluid rounded w-100">
       </div>
-</div>
+    </div>
 
   </div>
 
@@ -196,15 +112,15 @@
     <h3 class="text-center">Top Places to Go</h3>
     <div id="grid" class="mt-4">
       <div class="grid-item">
-        <img src="/static/sea.JPEG">
+        <img src="{% static 'sea.JPEG' %}">
         <div class="overlay">Sea Beach Adventure</div>
       </div>
       <div class="grid-item">
-        <img src="/static/town.JPEG">
+        <img src="{% static 'town.JPEG' %}">
         <div class="overlay">Town Moments Exploration</div>
       </div>
       <div class="grid-item">
-        <img src="/static/tracking.JPEG">
+        <img src="{% static 'tracking.JPEG' %}">
         <div class="overlay">Tracking Mountains</div>
       </div>
     </div>
@@ -228,13 +144,7 @@
     <p>&copy; 2024 Travellers is a registered trademark of Votenet solution with evoting System.</p>
   </footer>
 
-  <script>
-    function scrollSlider(direction) {
-      const slider = document.getElementById("sliderList");
-      const scrollAmount = slider.clientWidth;
-      slider.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-    }
-  </script>
+
   <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
