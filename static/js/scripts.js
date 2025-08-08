@@ -30,9 +30,11 @@ nextBtn.addEventListener('click', () => {
 function updateSlider() {
     imageList.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
- function scrollSlider(direction) {
-    const slider = document.getElementById('sliderList');
-    const width = slider.clientWidth;
-    slider.scrollBy({ left: direction * width, behavior: 'smooth' });
-  }
+
+
+   function scrollSlider(direction) {
+      const slider = document.getElementById("sliderList");
+      const scrollAmount = slider.clientWidth;
+      slider.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    }
 
