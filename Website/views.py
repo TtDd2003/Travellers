@@ -51,11 +51,11 @@ def more(request):
         if form.is_valid():
             form.save()
             obj = form.instance  
-            return render(request, 'more.html', {'obj': obj})  
+            return render(request, 'more.html', {'obj': obj})
+        else:
+            print(form.errors)  # Debug print to console/log
     else:
         form = Imageform()  
-        img = Image.objects.all()  
+    img = Image.objects.all()  
     return render(request, 'more.html', {'img': img, 'form': form})
-
-
 
