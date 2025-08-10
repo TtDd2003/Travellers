@@ -13,28 +13,36 @@
       *{
          font-family: sans-sarif;
   }
-  section{width: 100%;
-   display: grid;
-   grid-template-columns: 30% 30% 30%; 
-   grid-gap: 10px; 
-   outline: 2px solid black;
+ section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-gap: 15px;
+  outline: 2px solid black;
+  padding: 10px;
 }
-div{
-   width:80%;
-    background-color:  #DBE9FA;
-    padding: 3%;
-    margin: 10px 50px;
-    text-align: center;
-}
-h1{font-size: 30px; text-align: center;}
-h3{text-align: center}
 
+section div {
+  background-color: #DBE9FA;
+  padding: 3%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
 
     </style>
     {% load static %}
 </head>
 <body>
-   <h1 class='text-center'>Some features that make us unique.. </h1>
+   <h1 class='text-center bg-dark text-light'>Some features that make us unique.. </h1>
    <h3>Those are getting far away....</h3>
    <section>
       {% for n in data %}
